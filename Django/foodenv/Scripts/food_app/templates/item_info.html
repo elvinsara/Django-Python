@@ -1,0 +1,57 @@
+
+
+{% extends 'nav.html' %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0">Food Item Details</h4>
+        </div>
+        <div class="card-body">
+            <!-- Item Image -->
+            <div class="text-center mb-4">
+                <img src="{{ food_item_info.item_image }}" alt="Item Image" class="img-fluid rounded" style="max-height: 300px; object-fit: cover;">
+            </div>
+            <!-- Item Details Table -->
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row" class="w-25">Item Name</th>
+                        <td>{{ food_item_info.item_name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Item Description</th>
+                        <td>{{ food_item_info.item_desc }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Item Price</th>
+                        <td>{{ food_item_info.item_price }}</td>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer text-center">
+            <a href="{% url 'food:update' food_item_info.id %}" class="btn btn-primary px-4 mr-2">Update</a>
+            <a href="{% url 'food:delete' food_item_info.id %}" class="btn btn-danger px-4">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- 
+ //old code
+
+<table>
+    <tr>
+        <th>Details</th>
+    </tr>
+    <tr>    
+        <td>Item Name : {{food_item_info.item_name}}</td>
+    </tr>
+    <tr>
+        <td>Item Description : {{food_item_info.item_desc}}</td>
+    </tr>
+    <tr>
+        <td>Item Price : {{food_item_info.item_price}}</td>
+    </tr>
+</table>
+ -->

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    
+     <!-- <h1>Food Menu</h1> -->
+      {% extends 'nav.html' %}
+     {% block content %}
+     {% for item in food %}
+     <div class="container mt-4">
+        <div class="card shadow p-3 mb-4">
+            <div class="row align-items-center">
+                <!-- Item Image -->
+                <div class="col-md-3">
+                    <img 
+                        src="{{ item.item_image }}" 
+                        alt="{{ item.item_name }}" 
+                        class="img-fluid rounded" 
+                        style="max-height: 120px; object-fit: cover; border: 1px solid #ddd; padding: 5px;"
+                    >
+                </div>
+    
+                <!-- Item Name -->
+                <div class="col-md-5">
+                    <h3 class="mb-0 text-dark">{{ item.item_name }}</h3>
+                </div>
+    
+                <!-- Details Button -->
+                <div class="col-md-4 d-flex align-items-center justify-content-end">
+                    <a href="{% url 'food:getfood' item.id %}" class="btn btn-success px-4 py-2">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     
+     <!-- //old code
+     <ul>
+     <li>Item Name : {{item.item_name}}</li>
+     <a href = "{% url 'food:getfood' item.id %}">View Details</a>
+    </ul> -->
+     {% endfor %}
+     {% endblock %}
+</body>
+</html>
