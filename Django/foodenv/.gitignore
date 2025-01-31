@@ -1,3 +1,30 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
-lib/
-settings.py
+# Ignore the virtual environment directory
+venv/
+Lib/
+
+# Ignore Django settings.py (if you want to keep it private and not upload it to GitHub)
+food_app/settings.py
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore environment-specific files
+*.env
+*.venv
+
+# Ignore database files
+db.sqlite3
+
+# Ignore media files
+media/
+
+# Ignore migrations directory (optional, if you want to ignore migrations from version control)
+my_project/migrations/
+
+# Ignore IDE or editor-specific files
+.vscode/
+.idea/
+*.swp
